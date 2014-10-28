@@ -1,11 +1,7 @@
-#
-# ElasticSearch Dockerfile
-#
-# https://github.com/dockerfile/elasticsearch
-#
-
 # Pull base image.
 FROM dockerfile/java:oracle-java7
+
+MAINTAINER jainish shah <jainish.shah@getzephyr.com>
 
 # Install ElasticSearch.
 RUN \
@@ -14,7 +10,7 @@ RUN \
   tar xvzf elasticsearch-1.3.2.tar.gz && \
   rm -f elasticsearch-1.3.2.tar.gz && \
   mv /tmp/elasticsearch-1.3.2 /elasticsearch
-
+RUN sudo /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.3.0
 # Define mountable directories.
 VOLUME ["/data"]
 
