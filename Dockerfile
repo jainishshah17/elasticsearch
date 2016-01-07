@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/java:oracle-java7
+FROM jainishshah17/oracle-java7
 
 MAINTAINER jainish shah <jainish.shah@getzephyr.com>
 
